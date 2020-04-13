@@ -28,7 +28,7 @@ function bones_ahoy() {
   load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-  require_once( 'library/custom-post-type.php' );
+  require_once( 'library/product-type.php' );
 
   // launching operation cleanup
   add_action( 'init', 'bones_head_cleanup' );
@@ -230,6 +230,13 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+function console_log( $data, $name ){
+    echo '<script>';
+    echo 'console.log("===>",'. json_encode( $data ) .')';
+    echo '</script>';
+}
+
+require_once( 'library/shortcodes.php' );
 
 /*
 This is a modification of a function found in the
