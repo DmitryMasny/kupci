@@ -57,10 +57,6 @@
                                									?>
                                								</section>
 
-<div >
-<?php echo do_shortcode("[product_types]"); ?>
-
-</div>
 
 
                                								<footer class="article-footer">
