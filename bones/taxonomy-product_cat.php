@@ -12,70 +12,55 @@
 */
 ?>
 
+
 <?php get_header(); ?>
 
-			<div id="content">
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-				<div id="inner-content" class="wrap cf">
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						<main id="main" class="m-all t-2of3 d-5of7 cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+        <header class="article-header">
 
-							<h1 class="archive-title h2"><?php single_cat_title(); ?></h1>
+            <h3 class="h2">
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                    <?php the_title(); ?>
+                </a>
+            </h3>
+            <p class="byline vcard"><?php
+                printf( get_the_term_list( get_the_ID(), 'product_cat'));
+            ?></p>
 
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        </header>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+        <section class="entry-content">
+            <?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'bonestheme' ) . '</span>' ); ?>
 
-								<header class="article-header">
+        </section>
 
-									<h3 class="h2">
-                                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                                            <?php the_title(); ?>
-                                        </a>
-									</h3>
-									<p class="byline vcard"><?php
-										printf( get_the_term_list( get_the_ID(), 'product_cat'));
-									?></p>
+        <footer class="article-footer">
 
-								</header>
+            <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 
-								<section class="entry-content">
-									<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'bonestheme' ) . '</span>' ); ?>
+        </footer>
 
-								</section>
+        <?php comments_template(); ?>
 
-								<footer class="article-footer">
+    </article>
 
-								</footer>
+    <?php endwhile; else : ?>
 
-							</article>
+        <article id="post-not-found" class="hentry cf">
+                <header class="article-header">
+                    <h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+            </header>
+                <section class="entry-content">
+                    <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+            </section>
+            <footer class="article-footer">
+                    <p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
+            </footer>
+        </article>
 
-							<?php endwhile; ?>
-
-									<?php bones_page_navi(); ?>
-
-							<?php else : ?>
-
-									<article id="post-not-found" class="hentry cf">
-										<header class="article-header">
-											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-										</header>
-										<section class="entry-content">
-											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-										</section>
-										<footer class="article-footer">
-												<p><?php _e( 'This is the error message in the taxonomy-custom_cat.php template.', 'bonestheme' ); ?></p>
-										</footer>
-									</article>
-
-							<?php endif; ?>
-
-						</main>
-
-						<?php get_sidebar(); ?>
-
-				</div>
-
-			</div>
+    <?php endif; ?>
 
 <?php get_footer(); ?>

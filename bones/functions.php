@@ -73,8 +73,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+//add_image_size( 'bones-thumb-600', 600, 150, true );
+//add_image_size( 'bones-thumb-300', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -95,15 +95,15 @@ for the 600 x 150 image:
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
-
-add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
-
-function bones_custom_image_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
-    ) );
-}
+//
+//add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+//
+//function bones_custom_image_sizes( $sizes ) {
+//    return array_merge( $sizes, array(
+//        'bones-thumb-600' => __('600px by 150px'),
+//        'bones-thumb-300' => __('300px by 100px'),
+//    ) );
+//}
 
 /*
 The function above adds the ability to use the dropdown menu to select
@@ -238,17 +238,11 @@ function console_log( $data, $name ){
 
 require_once( 'library/shortcodes.php' );
 
-/*
-This is a modification of a function found in the
-twentythirteen theme where we can declare some
-external fonts. If you're using Google Fonts, you
-can replace these fonts, change it in your scss files
-and be up and running in seconds.
-*/
-function bones_fonts() {
+
+/*function bones_fonts() {
   wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Gotham:400,700,400italic,700italic');
 }
-
 add_action('wp_enqueue_scripts', 'bones_fonts');
+*/
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -81,5 +81,4 @@
 
         </header>
 
-		<div class="mainPageContainer">
-
+    <main class="mainPageContainer" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">

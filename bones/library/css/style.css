@@ -1346,7 +1346,8 @@ HEADER STYLES
   position: fixed;
   width: 100%;
   height: 60px;
-  box-shadow: 0 2px 4px rgba(50, 57, 68, 0.2); }
+  box-shadow: 0 2px 4px rgba(50, 57, 68, 0.2);
+  z-index: 999; }
   .headerInner {
     display: flex;
     align-items: center; }
@@ -1410,10 +1411,7 @@ POSTS & CONTENT STYLES
   padding-top: 60px; }
 
 .hentry {
-  background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
+  margin-bottom: 1.5em; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
@@ -1731,6 +1729,17 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
+/*
+  Landing
+*/
+.start-block {
+  position: relative;
+  height: 600px;
+  background-color: #e1eae9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
