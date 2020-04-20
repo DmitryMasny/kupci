@@ -51,6 +51,12 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     top: 1px; // adds a tiny hop to the click
   } // end active
 
+  &.large {
+    line-height: 40px;
+    font-weight: 500;
+    padding: 15px 30px;
+  }
+
 } // end .button
 
 /*

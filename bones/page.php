@@ -4,7 +4,8 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-        <section class="entry-content cf" itemprop="articleBody">
+        <section class="entry-content cf wrap" itemprop="articleBody">
+
             <h1 class="page-title"><?php the_title(); ?></h1>
 
             <?php
@@ -17,12 +18,6 @@
                 ) );
             ?>
         </section>
-
-        <footer class="article-footer">
-
-            <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-        </footer>
 
         <?php comments_template(); ?>
 

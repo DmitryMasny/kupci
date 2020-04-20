@@ -230,9 +230,9 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-function console_log( $data, $name ){
+function console_log( $name, $data ){
     echo '<script>';
-    echo 'console.log("===>",'. json_encode( $data ) .')';
+    echo 'console.log("'. $name .'=> ",'. json_encode( $data ) .')';
     echo '</script>';
 }
 

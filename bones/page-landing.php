@@ -15,23 +15,28 @@
 
 <?php get_header(); ?>
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php  the_post(); ?>
 
 
     <div class="start-block" style="background-image: url('<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>')">
         <div class="inner">
-            
+        <?php the_field('header');?>
+            <div>
+                <div class="green-btn large"><?php the_field('main_btn_text');?></div>
+            </div>
         </div>
     </div>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <div></div>
 
-        <section itemprop="articleBody">
 
-            <h1 class="page-title"><?php the_title(); ?></h1>
+    <article id="post-<?php the_ID() ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
+        <section class="entry-content cf wrap" itemprop="articleBody">
 
             <?php
                 the_content();
+
                 wp_link_pages( array(
                     'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
                     'after'       => '</div>',
@@ -51,20 +56,5 @@
 
     </article>
 
-    <?php endwhile; else : ?>
-
-        <article id="post-not-found" class="hentry cf">
-                <header class="article-header">
-                    <h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-            </header>
-                <section class="entry-content">
-                    <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-            </section>
-            <footer class="article-footer">
-                    <p><?php _e( 'This is the error message in the page-custom.php template.', 'bonestheme' ); ?></p>
-            </footer>
-        </article>
-
-    <?php endif; ?>
 
 <?php get_footer(); ?>

@@ -1,5 +1,8 @@
 <?php
 
+/*
+    Список категорий продуктов
+*/
 function product_types_handler( $atts ){
     ob_start();
     $rg = (object) shortcode_atts( [
@@ -48,7 +51,35 @@ function product_types_handler( $atts ){
 }
 
 
+/*
+    Список категорий продуктов
+*/
+function advantages_handler(  ){
+    ob_start();
+
+        $values = get_field('advantages');
+//         var_dump($values);
+//        console_log('$values', $values);
+        if ($values && $values["adv1"]) {
+        	echo '<div class="advantages">';
+
+        	foreach([1, 2, 3, 4] as $num) {
+        		echo '<div class="advant"><img class="advant-image" src="' . $values['img' . $num] .'"/><div  class="advant-text">' . $values['adv' . $num] . '</div></div>';
+        	}
+
+        	echo '</div>';
+        }
+
+    return ob_get_clean();
+
+}
+
+
+// always good to see exactly what you are working with
+// var_dump($values);
+
 
 add_shortcode( 'product_types', 'product_types_handler' );
+add_shortcode( 'advantages', 'advantages_handler' );
 
 ?>

@@ -936,6 +936,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     outline: none; }
   .blue-btn:active, .comment-reply-link:active, #submit:active, .green-btn:active {
     top: 1px; }
+  .large.blue-btn, .large.comment-reply-link, .large#submit, .large.green-btn {
+    line-height: 40px;
+    font-weight: 500;
+    padding: 15px 30px; }
 
 /*
 An example button.
@@ -1408,106 +1412,17 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 .mainPageContainer {
-  padding-top: 60px; }
+  padding-top: 60px;
+  background-color: #fff; }
 
 .hentry {
   margin-bottom: 1.5em; }
-  .hentry header {
-    border-bottom: 1px solid #f8f9fa;
-    padding: 1.5em; }
-  .hentry footer {
-    padding: 1.5em;
-    border-top: 1px solid #f8f9fa; }
-    .hentry footer p {
-      margin: 0; }
-
-/* style by tag (i.e. tag-news) */
-/* post meta */
-.byline {
-  color: #9fa6b4;
-  font-style: italic;
-  margin: 0; }
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
-  /*
-  image alignment on a screen this size may be
-  a bit difficult. It's set to start aligning
-  and floating images at the next breakpoint,
-  but it's up to you. Feel free to change it up.
-  */ }
+  padding: 1.5em 1.5em 0; }
   .entry-content p {
     margin: 0 0 1.5em; }
-  .entry-content table {
-    width: 100%;
-    border: 1px solid #eaedf2;
-    margin-bottom: 1.5em; }
-    .entry-content table caption {
-      margin: 0 0 7px;
-      font-size: 0.75em;
-      color: #9fa6b4;
-      text-transform: uppercase;
-      letter-spacing: 1px; }
-  .entry-content tr {
-    border-bottom: 1px solid #eaedf2; }
-    .entry-content tr:nth-child(even) {
-      background-color: #f8f9fa; }
-  .entry-content td {
-    padding: 7px;
-    border-right: 1px solid #eaedf2; }
-    .entry-content td:last-child {
-      border-right: 0; }
-  .entry-content th {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #eaedf2;
-    border-right: 1px solid #eaedf2; }
-    .entry-content th:last-child {
-      border-right: 0; }
-  .entry-content blockquote {
-    margin: 0 0 1.5em 0.75em;
-    padding: 0 0 0 0.75em;
-    border-left: 3px solid #2980b9;
-    font-style: italic;
-    color: #9fa6b4; }
-  .entry-content dd {
-    margin-left: 0;
-    font-size: 0.9em;
-    color: #787878;
-    margin-bottom: 1.5em; }
-  .entry-content img {
-    margin: 0 0 1.5em 0;
-    max-width: 100%;
-    height: auto; }
-  .entry-content .size-auto,
-  .entry-content .size-full,
-  .entry-content .size-large,
-  .entry-content .size-medium,
-  .entry-content .size-thumbnail {
-    max-width: 100%;
-    height: auto; }
-  .entry-content pre {
-    background: #323944;
-    color: #f8f9fa;
-    font-size: 0.9em;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
-    border-radius: 3px; }
-
-/* end .entry-content */
-.wp-caption {
-  max-width: 100%;
-  background: #eee;
-  padding: 5px;
-  /* images inside wp-caption */ }
-  .wp-caption img {
-    max-width: 100%;
-    margin-bottom: 0;
-    width: 100%; }
-  .wp-caption p.wp-caption-text {
-    font-size: 0.85em;
-    margin: 4px 0 7px;
-    text-align: center; }
 
 /* end .wp-caption */
 /* image gallery styles */
@@ -1738,7 +1653,30 @@ view.
   background-color: #e1eae9;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .start-block .inner {
+    color: #fff;
+    text-shadow: 1px 2px 5px rgba(50, 57, 68, 0.2);
+    font-size: 60px;
+    font-weight: 500;
+    width: 700px;
+    text-align: center;
+    line-height: 1.2em; }
+
+.advantages {
+  display: flex;
+  align-items: flex-start;
+  padding: 30px 0;
+  text-align: center; }
+  .advantages .advant {
+    padding: 0 20px; }
+    .advantages .advant-image {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px; }
 
 /*********************
 LARGER MOBILE DEVICES
