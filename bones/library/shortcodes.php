@@ -23,7 +23,7 @@ function product_types_handler( $atts ){
     );
     $catlist = get_categories($args); // получаем список рубрик
 
-    echo("<ul>");
+    echo('<div class="product-cats">');
 
     foreach($catlist as $categories_item){
 
@@ -36,15 +36,15 @@ function product_types_handler( $atts ){
             foreach((array)$terms as $term){
                 if ($term->term_id == $categories_item->term_id){
 //                    echo ('XXXXXXXXXXXxx');
-                    echo ('<li><a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") . '</a></li>');
+                    echo ('<div class="product-cats-item"><a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") . '</a></div>');
                 }
             }
 
-            echo("<p>" . $categories_item->cat_name . "</p></li>");
+            echo("<p>" . $categories_item->cat_name . "</p>");
         }
     }
 
-    echo("</ul>");
+    echo("</div>");
 
     return ob_get_clean();
 
@@ -52,7 +52,7 @@ function product_types_handler( $atts ){
 
 
 /*
-    Список категорий продуктов
+    Наши преимужества
 */
 function advantages_handler(  ){
     ob_start();

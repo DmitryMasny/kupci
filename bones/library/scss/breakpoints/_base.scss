@@ -132,7 +132,14 @@ HEADER STYLES
     color: $black;
   }
   &MainBtn {
-    margin-left: 10px;
+    margin-left: 20px;
+  }
+  .phone>a, .email>a{
+    color: $text-color;
+    font-weight: 400;
+  }
+  .email{
+    margin-right: 20px;
   }
 }
 .flex-full {
@@ -153,7 +160,6 @@ and more scalable.
 
 .nav {
   display: flex;
-
   li {
 
     a {
@@ -247,9 +253,7 @@ POSTS & CONTENT STYLES
 
 
 .hentry { // page content
-
-  margin-bottom: 1.5em;
-
+  min-height: calc(100vh - 170px);
 }
 
 /* entry content */
@@ -710,7 +714,19 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: $black;
-  color: $light-gray;
+  color: $meta-gray;
+  text-align: center;
+  min-height: 110px;
+  .contacts {
+    span{
+      display: inline-block;
+      padding: 0 10px;
+      white-space: nowrap;
+    }
+    .email {
+      border-left: 1px solid $text-color;
+    }
+  }
 }
 
 /*

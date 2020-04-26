@@ -71,7 +71,7 @@
                     )); ?>
 
                 </nav>
-                <div class"headerMainBtn">
+                <div class="headerMainBtn">
                     <button class="green-btn">
                         Получить прайс лист
                     </button>

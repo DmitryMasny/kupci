@@ -20,7 +20,7 @@
     					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 						)); ?>
 					</nav>
-
+					<p class="contacts"><span>+7 909 999 74 14</span><span class="email">kypci.rus@mail.ru</span></p>
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
 				</div>

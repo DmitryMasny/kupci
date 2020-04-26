@@ -1360,7 +1360,12 @@ HEADER STYLES
     margin: 4px 0;
     color: #323944; }
   .headerMainBtn {
-    margin-left: 10px; }
+    margin-left: 20px; }
+  .header .phone > a, .header .email > a {
+    color: #5c6b80;
+    font-weight: 400; }
+  .header .email {
+    margin-right: 20px; }
 
 .flex-full {
   flex-grow: 1; }
@@ -1416,7 +1421,7 @@ POSTS & CONTENT STYLES
   background-color: #fff; }
 
 .hentry {
-  margin-bottom: 1.5em; }
+  min-height: calc(100vh - 170px); }
 
 /* entry content */
 .entry-content {
@@ -1632,7 +1637,15 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: #323944;
-  color: #f8f9fa; }
+  color: #9fa6b4;
+  text-align: center;
+  min-height: 110px; }
+  .footer .contacts span {
+    display: inline-block;
+    padding: 0 10px;
+    white-space: nowrap; }
+  .footer .contacts .email {
+    border-left: 1px solid #5c6b80; }
 
 /*
 if you checked out the link above:
@@ -1678,6 +1691,39 @@ view.
       height: 64px;
       margin-bottom: 10px; }
 
+.about {
+  position: relative;
+  background-color: #FFF6C7;
+  padding: 20px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center; }
+  .about > p, .about > h2 {
+    position: relative;
+    z-index: 2; }
+  .about:before, .about:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url("../images/kyploma.png") no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7; }
+  .about:after {
+    display: none;
+    right: 0;
+    left: inherit;
+    transform: scaleX(-1);
+    -ms-filter: "FlipH"; }
+
+.product-cats {
+  display: flex; }
+  .product-cats-item {
+    padding: 20px; }
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -1685,78 +1731,12 @@ larger than an iPhone but smaller than a tablet. Let's call them
 tweeners.
 *********************/
 @media only screen and (min-width: 481px) {
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: 481px and Up Stylesheet
-  
-  This stylesheet is loaded for larger devices. It's set to
-  481px because at 480px it would load on a landscaped iPhone.
-  This isn't ideal because then you would be loading all those
-  extra styles on that same mobile connection.
-  
-  A word of warning. This size COULD be a larger mobile device,
-  so you still want to keep it pretty light and simply expand
-  upon your base.scss styles.
-  
-  ******************************************************************/
-  /*
-  IMPORTANT NOTE ABOUT SASS 3.3 & UP
-  You can't use @extend within media queries
-  anymore, so just be aware that if you drop
-  them in here, they won't work.
-  */
-  /*********************
-  NAVIGATION STYLES
-  *********************/
-  /* .menu is clearfixed inside mixins.scss */
-  .menu {
-    /* end .menu ul */ }
-    .menu ul {
-      /* end .menu ul li */
-      /* highlight current page */
-      /* end current highlighters */ }
-      .menu ul li {
-        /*
-        plan your menus and drop-downs wisely.
-        */ }
-        .menu ul li a {
-          /*
-          you can use hover styles here even though this size
-          has the possibility of being a mobile device.
-          */ }
-
-  /* end .menu */
-  /*********************
-  POSTS & CONTENT STYLES
-  *********************/
-  /* entry content */
-  .entry-content {
-    /* at this larger size, we can start to align images */ }
-    .entry-content .alignleft, .entry-content img.alignleft {
-      margin-right: 1.5em;
-      display: inline;
-      float: left; }
-    .entry-content .alignright, .entry-content img.alignright {
-      margin-left: 1.5em;
-      display: inline;
-      float: right; }
-    .entry-content .aligncenter, .entry-content img.aligncenter {
-      margin-right: auto;
-      margin-left: auto;
-      display: block;
-      clear: both; }
-
-  /* end .entry-content */
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  check your menus here. do they look good?
-  do they need tweaking?
-  */
-  /* end .footer-links */ }
+  .about {
+    padding: 20px 100px; }
+    .about:before, .about:after {
+      background-size: contain; }
+    .about:after {
+      display: block; } }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -1764,42 +1744,10 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 768px) {
-  /******************************************************************
-  Site Name:
-  Author:
-  
-  Stylesheet: Tablet & Small Desktop Stylesheet
-  
-  Here's where you can start getting into the good stuff.
-  This size will work on iPads, other tablets, and desktops.
-  So you can start working with more styles, background images,
-  and other resources. You'll also notice the grid starts to
-  come into play. Have fun!
-  
-  ******************************************************************/
-  /*********************
-  GENERAL STYLES
-  *********************/
-  /*********************
-  LAYOUT & GRID STYLES
-  *********************/
-  /*********************
-  HEADER STYLES
-  *********************/
-  /*********************
-  NAVIGATION STYLES
-  *********************/
   .nav {
-    justify-content: flex-end;
-    /* end .menu ul li */
-    /* highlight current page */
-    /* end current highlighters */ }
+    justify-content: flex-end; }
     .nav li {
-      position: relative;
-      /*
-      plan your menus and drop-downs wisely.
-      */
-      /* showing sub-menus */ }
+      position: relative; }
       .nav li:hover > ul {
         top: auto;
         visibility: visible; }
@@ -1808,54 +1756,10 @@ you can add resource intensive styles.
     .nav li.current_page_ancestor a {
       color: #f01d4f; }
 
-  /* end .nav */
-  /*********************
-  SIDEBARS & ASIDES
-  *********************/
-  .sidebar {
-    margin-top: 2.2em; }
-
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em; }
-
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
-    .widget ul li {
-      margin-bottom: 0.75em;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; }
-
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
-  /*********************
-  FOOTER STYLES
-  *********************/
-  /*
-  you'll probably need to do quite a bit
-  of overriding here if you styled them for
-  mobile. Make sure to double check these!
-  */
-  .footer-links ul li {
-    /*
-    be careful with the depth of your menus.
-    it's very rare to have multi-depth menus in
-    the footer.
-    */ }
-
-  /* end .footer-links */ }
+  .about {
+    padding: 20px 150px; }
+    .about:before, .about:after {
+      opacity: 1; } }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and

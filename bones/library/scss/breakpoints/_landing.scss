@@ -40,3 +40,42 @@ display: flex;
     }
   }
 }
+
+.about {
+  position: relative;
+  background-color: $yellow-light;
+  padding: 20px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  &>p, &>h2 {
+    position: relative;
+    z-index: 2;
+  }
+  &:before, &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: url("../images/kyploma.png") no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+  }
+  &:after {
+    display: none;
+    right: 0;
+    left: inherit;
+    transform: scaleX(-1);
+    -ms-filter: "FlipH";
+  }
+}
+
+.product-cats {
+  display: flex;
+  &-item{
+    padding: 20px;
+  }
+}

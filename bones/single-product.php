@@ -20,25 +20,27 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-        <section class="entry-content cf" itemprop="articleBody">
+        <section class="entry-content product-page wrap cf" itemprop="articleBody">
             <h1 class="page-title"><?php the_title(); ?></h1>
 
-            <?php
-                the_content();
-                wp_link_pages( array(
-                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-                    'after'       => '</div>',
-                    'link_before' => '<span>',
-                    'link_after'  => '</span>',
-                ) );
-            ?>
-        </section>
+            <div class="product-page-image m-all t-1of2 d-1of2 cf">
+                 <img src="<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>"/>
+            </div>
 
-        <footer>
-        <p class="byline vcard"><?php
-            printf( get_the_term_list( $post->ID, 'product_cat', ' ', ', ', '' ) );
-        ?></p>
-        </footer>
+            <div class="product-page-info m-all t-1of2 d-1of2 last-col cf">
+                 <?php the_content(); ?>
+            </div>
+
+            <div class="product-page-image m-all t-all d-all cf">
+                <p class="byline vcard">
+                  Категория:
+                  <?php printf( get_the_term_list( $post->ID, 'product_cat', ' ', ', ', '' ) ); ?>
+                </p>
+            </div>
+
+
+
+        </section>
 
         <?php comments_template(); ?>
 
