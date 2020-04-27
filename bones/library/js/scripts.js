@@ -105,16 +105,26 @@ function loadGravatars() {
 } // end function
 
 
+
+var formModal = null;
+
+
+function openModal() {
+if (!formModal) formModal = document.getElementById('formModal');
+    formModal.classList.add("show");
+}
+
+function closeModal(e) {
+	// e.preventDefault();
+    if (e.target.id === 'formModal' && formModal)  formModal.classList.remove("show");
+}
+
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
-
+	$('#formModalBtn').on( "click", openModal);
+	$('#formModal').on( "click", closeModal);
 
 }); /* end of as page load scripts */

@@ -44,7 +44,7 @@
 
         <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-            <div id="inner-header" class="wrap cf headerInner">
+            <div class="wrap cf header-inner">
 
                 <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
                 <a class="logo" href="<?php echo home_url(); ?>" rel="nofollow">
@@ -71,14 +71,22 @@
                     )); ?>
 
                 </nav>
-                <div class="headerMainBtn">
-                    <button class="green-btn">
+                <div class="header-mainBtn">
+                    <button id="formModalBtn" class="btn green-btn">
                         Получить прайс лист
                     </button>
                 </div>
+
+
 
             </div>
 
         </header>
 
     <main class="mainPageContainer" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+    <div id="formModal" class="form-modal">
+        <div class="form-modal-inner">
+            <?php echo do_shortcode('[contact-form-7 id="161" title="Callback"]'); ?>
+        </div>
+    </div>

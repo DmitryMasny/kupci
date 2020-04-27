@@ -33,14 +33,14 @@ function product_types_handler( $atts ){
             ));
 
         if (!empty($terms)){
+            $noEmpty = false;
             foreach((array)$terms as $term){
                 if ($term->term_id == $categories_item->term_id){
-//                    echo ('XXXXXXXXXXXxx');
-                    echo ('<div class="product-cats-item"><a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") . '</a></div>');
+                    $noEmpty = true;
+                    echo ('<div class="product-cats-item"><a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") );
                 }
             }
-
-            echo("<p>" . $categories_item->cat_name . "</p>");
+            if ($noEmpty) echo('<div class="text">' . $categories_item->cat_name . '</div></a></div>');
         }
     }
 
@@ -73,6 +73,26 @@ function advantages_handler(  ){
     return ob_get_clean();
 
 }
+/*
+    About
+*/
+function about_handler( $atts = [] ){
+    ob_start();
+
+    $atts2 = (object) shortcode_atts( [
+        'title' => 'О компании'
+    ], $atts );
+
+    $text = get_field('about');
+
+        echo '<div class="about">';
+        echo '<h2>'. $atts2->title .'</h2>';
+        echo '<p>'. $text .'</p>';
+        echo '</div>';
+
+    return ob_get_clean();
+
+}
 
 
 // always good to see exactly what you are working with
@@ -81,5 +101,6 @@ function advantages_handler(  ){
 
 add_shortcode( 'product_types', 'product_types_handler' );
 add_shortcode( 'advantages', 'advantages_handler' );
+add_shortcode( 'about', 'about_handler' );
 
 ?>

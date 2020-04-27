@@ -122,16 +122,17 @@ HEADER STYLES
   height: 60px;
   box-shadow: 0 2px 4px rgba($black, .2);
   z-index: 999;
-  &Inner {
+  &-inner {
     display: flex;
     align-items: center;
   }
   a.logo {
-    width: 205px;
+    width: 172px;
     margin: 4px 0;
     color: $black;
   }
-  &MainBtn {
+  &-mainBtn {
+    display: none;
     margin-left: 20px;
   }
   .phone>a, .email>a{
@@ -161,7 +162,7 @@ and more scalable.
 .nav {
   display: flex;
   li {
-
+    display: none;
     a {
       display: block;
       color: $black;
@@ -258,7 +259,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
+  padding: 20px;
 
   p {
     margin: 0 0 1.5em;
@@ -577,7 +578,7 @@ COMMENT STYLES
 
 /* comment reply link */
 .comment-reply-link {
-  @extend .blue-btn;
+  @extend .red-btn;
   font-size: 0.9em;
   float: right;
 
@@ -633,7 +634,7 @@ COMMENT FORM STYLES
 
 /* comment submit button */
 #submit {
-  @extend .blue-btn;
+  @extend .red-btn;
   float: right;
   font-size: 1em;
 }
@@ -752,4 +753,11 @@ view.
 /* end .footer-links */
 
 .copyright {
+}
+
+.blocks-gallery-item {
+  transition: opacity .12s ease-out;
+  &:hover {
+    opacity: .88;
+  }
 }

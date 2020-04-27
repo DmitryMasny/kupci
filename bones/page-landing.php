@@ -21,8 +21,8 @@
     <div class="start-block" style="background-image: url('<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>')">
         <div class="inner">
         <?php the_field('header');?>
-            <div>
-                <div class="green-btn large"><?php the_field('main_btn_text');?></div>
+            <div >
+                <div class="btn green-btn large"><?php the_field('main_btn_text');?></div>
             </div>
         </div>
     </div>
@@ -56,5 +56,8 @@
 
     </article>
 
+<div class="maps">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5cc76e205fedb49f61c32c2483c2453454130bf1e6961284ff67d60c14c6f623&amp;width=100%25&amp;height=250&amp;lang=ru_RU"></script>
+</div>
 
 <?php get_footer(); ?>

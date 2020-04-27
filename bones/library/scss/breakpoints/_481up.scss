@@ -1,4 +1,25 @@
 
+.header {
+	a.logo {
+		width: 205px;
+	}
+	&-mainBtn {
+		display: block;
+		.btn {
+			font-size: 15px;
+			padding: 5px 15px;
+		}
+	}
+}
+
+
+.start-block {
+	height: 600px;
+	.inner {
+		font-size: 42px;
+	}
+}
+
 .about {
 	padding: 20px 100px;
 

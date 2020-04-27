@@ -100,6 +100,10 @@ textarea,
 
   } // end disabled input
 
+  &::placeholder {
+    color: $text-gray;
+  }
+
 } // end input defaults
 
 // spacing out the password (thx @murtaugh)

@@ -4,7 +4,7 @@
 
 .start-block {
   position: relative;
-  height: 600px;
+  height: 400px;
   background-color: #e1eae9;
   background-repeat: no-repeat;
   background-position: center;
@@ -15,11 +15,14 @@ display: flex;
   .inner {
     color: $white;
     text-shadow: 1px 2px 5px rgba($black,.2);
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 500;
-    width: 700px;
+    max-width: 700px;
     text-align: center;
     line-height: 1.2em;
+    .btn {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -28,6 +31,7 @@ display: flex;
   align-items: flex-start;
   padding: 30px 0;
   text-align: center;
+  margin-bottom: 30px;
   .advant {
     padding: 0 20px;
     &-image {
@@ -48,6 +52,7 @@ display: flex;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
+  margin-bottom: 30px;
   &>p, &>h2 {
     position: relative;
     z-index: 2;
@@ -75,7 +80,143 @@ display: flex;
 
 .product-cats {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
   &-item{
     padding: 20px;
+    position: relative;
+    &>a{
+      text-decoration: none;
+      color: $black;
+      text-align: center;
+      &>img{
+        transition: opacity .12s ease-out;
+        border-radius: 50%;
+      }
+      &:hover {
+          color: $link-hover;
+        &>img{
+          opacity: .88;
+        }
+      }
+    }
   }
+}
+
+.prod-land-img{
+  margin-bottom: 30px;
+  img{
+    height: auto;
+  }
+}
+
+.form-modal{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 60px 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s ease-out;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($black, .7);
+  }
+
+  &-inner{
+    transition: transform .3s ease-out;
+    transform: translateY(50px);
+    padding: 20px;
+    background-color: $white;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 1px 3px 10px rgba($black, .3);
+  }
+  &.show {
+    z-index: 1005;
+    opacity: 1;
+
+    .form-modal-inner{
+      transform: translateY(0);
+    }
+  }
+}
+
+.wpcf7{
+
+  &-form{
+    text-align: center;
+    .form-row{
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin: 0 -15px;
+    }
+    .form-group{
+      width: 45%;
+      max-width: 300px;
+      padding: 0 15px;
+    }
+    .form-submit{
+      padding-top: 24px;
+      position: relative;
+
+      .btn{
+        padding: 5px 30px;
+      }
+      .ajax-loader {
+        position: absolute;
+        right: 10px;
+        top: 12px;
+      }
+    }
+    .form-desc {
+      font-size: 10px;
+    }
+
+    //Внутри модалки
+    .form-modal & {
+      .form-row{
+        flex-direction: column;
+      }
+
+      .form-group, .btn{
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    // Validation
+    .wpcf7-not-valid{
+      border-bottom: 2px solid $red;
+      padding-top: 2px;
+
+    }
+    span.wpcf7-not-valid-tip{
+      color: $red;
+      font-size: 14px;
+    }
+    div.wpcf7-response-output {
+      margin: 5px 0 15px;
+      //border-color: $red;
+    }
+  }
+}
+
+
+
+.maps {
+  //margin-top: 30px;
 }

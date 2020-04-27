@@ -171,6 +171,19 @@ Again, if you want to roll your own, just remove this junk and put
 whatever you use in here.
 
 ******************************************************************/
+.header a.logo {
+  width: 205px; }
+.header-mainBtn {
+  display: block; }
+  .header-mainBtn .btn {
+    font-size: 15px;
+    padding: 5px 15px; }
+
+.start-block {
+  height: 600px; }
+  .start-block .inner {
+    font-size: 42px; }
+
 .about {
   padding: 20px 100px; }
   .about:before, .about:after {
@@ -181,6 +194,7 @@ whatever you use in here.
 .nav {
   justify-content: flex-end; }
   .nav li {
+    display: block;
     position: relative; }
     .nav li:hover > ul {
       top: auto;
@@ -188,7 +202,12 @@ whatever you use in here.
   .nav li.current-menu-item a,
   .nav li.current_page_item a,
   .nav li.current_page_ancestor a {
-    color: #f01d4f; }
+    color: #f01d3a; }
+
+.start-block {
+  height: 600px; }
+  .start-block .inner {
+    font-size: 42px; }
 
 .about {
   padding: 20px 150px; }
