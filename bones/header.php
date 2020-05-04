@@ -68,7 +68,8 @@
                                'link_after' => '',                             // after each link
                                'depth' => 0,                                   // limit the depth of the nav
                              'fallback_cb' => ''                             // fallback function (if there is one)
-                    )); ?>
+                    ));
+                    ?>
 
                 </nav>
                 <div class="header-mainBtn">
@@ -76,9 +77,30 @@
                         Получить прайс лист
                     </button>
                 </div>
+                <button id="mobMenuBtn" class="mob-menu-btn" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </button>
 
 
+            </div>
 
+            <div class="mob-menu">
+                <?php  wp_nav_menu(array(
+                           'container' => false,                           // remove nav container
+                           'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+                           'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+                           'menu_class' => 'nav top-nav cf',               // adding custom nav class
+                           'theme_location' => 'main-nav',                 // where it's located in the theme
+                           'before' => '',                                 // before the menu
+                             'after' => '',                                  // after the menu
+                             'link_before' => '',                            // before each link
+                             'link_after' => '',                             // after each link
+                             'depth' => 0,                                   // limit the depth of the nav
+                           'fallback_cb' => ''                             // fallback function (if there is one)
+                  ));
+                  ?>
             </div>
 
         </header>
@@ -87,6 +109,12 @@
 
     <div id="formModal" class="form-modal">
         <div class="form-modal-inner">
+            <div class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+            </div>
             <?php echo do_shortcode('[contact-form-7 id="161" title="Callback"]'); ?>
         </div>
     </div>

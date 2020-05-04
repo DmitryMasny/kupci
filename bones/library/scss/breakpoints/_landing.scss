@@ -15,32 +15,36 @@ display: flex;
   .inner {
     color: $white;
     text-shadow: 1px 2px 5px rgba($black,.2);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     max-width: 700px;
     text-align: center;
     line-height: 1.2em;
     .btn {
-      margin-top: 20px;
+      margin-top: 10px;
     }
   }
 }
 
 .advantages {
   display: flex;
-  align-items: flex-start;
-  padding: 30px 0;
+  padding: 20px 0;
   text-align: center;
   margin-bottom: 30px;
+  flex-direction: column;
+  align-items: center;
   .advant {
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
     &-image {
       width: 64px;
       height: 64px;
       margin-bottom: 10px;
     }
     &-text {
-
+      font-size: 15px;
     }
   }
 }
@@ -80,14 +84,18 @@ display: flex;
 
 .product-cats {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 30px;
   &-item{
+
+    width: 16.66%;
+    max-width: 300px;
+    min-width: 200px;
     padding: 20px;
     position: relative;
-    &>a{
+    &-inner{
+      display: block;
       text-decoration: none;
       color: $black;
       text-align: center;
@@ -100,6 +108,12 @@ display: flex;
         &>img{
           opacity: .88;
         }
+      }
+    }
+    &-inner:visited {
+      color: $black;
+      &:hover {
+        color: $link-hover;
       }
     }
   }
@@ -138,11 +152,21 @@ display: flex;
   &-inner{
     transition: transform .3s ease-out;
     transform: translateY(50px);
-    padding: 20px;
+    padding: 20px 40px;
     background-color: $white;
     position: relative;
     border-radius: 10px;
     box-shadow: 1px 3px 10px rgba($black, .3);
+  }
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    fill: $text-color;
+    &:hover{
+      fill: $red;
+    }
   }
   &.show {
     z-index: 1005;
@@ -155,24 +179,30 @@ display: flex;
 }
 
 .wpcf7{
-
   &-form{
     text-align: center;
+
+    br {
+      display: none;
+    }
     .form-row{
       text-align: left;
       display: flex;
       align-items: flex-start;
       justify-content: center;
+      flex-direction: column;
       margin: 0 -15px;
     }
     .form-group{
-      width: 45%;
+      width: 100%;
       max-width: 300px;
       padding: 0 15px;
+      margin: 0 auto;
     }
     .form-submit{
-      padding-top: 24px;
+      padding: 0 15px 0;
       position: relative;
+      margin: 0 auto;
 
       .btn{
         padding: 5px 30px;
@@ -185,14 +215,19 @@ display: flex;
     }
     .form-desc {
       font-size: 10px;
+      margin-top: 10px;
     }
 
     //Внутри модалки
     .form-modal & {
+      max-width: 400px;
       .form-row{
         flex-direction: column;
+        align-items: center;
       }
-
+      .form-submit{
+        padding-top: 0;
+      }
       .form-group, .btn{
         width: 100%;
         justify-content: center;
@@ -210,7 +245,12 @@ display: flex;
     }
     div.wpcf7-response-output {
       margin: 5px 0 15px;
-      //border-color: $red;
+      border-color: $green2;
+      color: $green2;
+      &.wpcf7-validation-errors {
+        border-color: $red;
+        color: $red;
+      }
     }
   }
 }

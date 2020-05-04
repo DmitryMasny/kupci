@@ -178,11 +178,17 @@ whatever you use in here.
   .header-mainBtn .btn {
     font-size: 15px;
     padding: 5px 15px; }
+.header .mob-menu-btn {
+  display: none; }
+.header .mob-menu.show {
+  display: none; }
 
 .start-block {
   height: 600px; }
   .start-block .inner {
     font-size: 42px; }
+    .start-block .inner .btn {
+      margin-top: 20px; }
 
 .about {
   padding: 20px 100px; }
@@ -190,6 +196,13 @@ whatever you use in here.
     background-size: contain; }
   .about:after {
     display: block; }
+
+.advantages {
+  flex-direction: row; }
+  .advantages .advant-image {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px; }
 
 .nav {
   justify-content: flex-end; }
@@ -214,6 +227,31 @@ whatever you use in here.
   .about:before, .about:after {
     opacity: 1; }
 
+.advantages {
+  align-items: flex-start;
+  padding: 30px 0; }
+  .advantages .advant {
+    padding: 0 20px; }
+    .advantages .advant-image {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 10px; }
+    .advantages .advant-text {
+      font-size: 16px; }
+
+.wpcf7-form .form-row {
+  flex-direction: row; }
+.wpcf7-form .form-group {
+  width: 45%; }
+.wpcf7-form .form-submit {
+  padding: 24px 15px 0; }
+  .wpcf7-form .form-submit .btn {
+    padding: 5px 30px; }
+  .wpcf7-form .form-submit .ajax-loader {
+    position: absolute;
+    right: 10px;
+    top: 12px; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -224,6 +262,12 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop.
 
 ******************************************************************/
+.nav {
+  display: flex; }
+
+.wpcf7-form .form-group {
+  width: 25%; }
+
 /*
 you can call the larger styles if you want, but there's really no need
 */

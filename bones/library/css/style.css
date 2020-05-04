@@ -1367,12 +1367,12 @@ HEADER STYLES
   background-color: #fff;
   position: fixed;
   width: 100%;
-  height: 60px;
   box-shadow: 0 2px 4px rgba(50, 57, 68, 0.2);
   z-index: 999; }
   .header-inner {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    height: 60px; }
   .header a.logo {
     width: 172px;
     margin: 4px 0;
@@ -1385,6 +1385,24 @@ HEADER STYLES
     font-weight: 400; }
   .header .email {
     margin-right: 20px; }
+  .header .mob-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #323944;
+    padding: 10px; }
+    .header .mob-menu .nav {
+      flex-direction: column-reverse; }
+      .header .mob-menu .nav li a {
+        color: #bbc1cc;
+        padding: 10px; }
+        .header .mob-menu .nav li a:hover, .header .mob-menu .nav li a:focus {
+          color: #fff; }
+    .header .mob-menu.show {
+      display: flex; }
+    .header .mob-menu-btn {
+      fill: #5c6b80; }
+      .header .mob-menu-btn:hover {
+        fill: #f01d3a; }
 
 .flex-full {
   flex-grow: 1; }
@@ -1400,12 +1418,11 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 .nav {
-  display: flex;
+  display: none;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */ }
   .nav li {
-    display: none;
     /*
     so you really have to rethink your dropdowns for mobile.
     you don't want to have it expand too much because the
@@ -1431,6 +1448,9 @@ and more scalable.
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
+
+.mob-menu .nav {
+  display: flex; }
 
 /* end .nav */
 /*********************
@@ -1682,6 +1702,38 @@ view.
   .blocks-gallery-item:hover {
     opacity: .88; }
 
+mark {
+  background-color: #ffea81; }
+
+.product-page-image {
+  display: flex;
+  justify-content: center; }
+  .product-page-image > img {
+    max-height: 500px; }
+.product-page-cats {
+  margin-top: 20px; }
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .product-list .product-thumb {
+    width: 16.66%;
+    max-width: 300px;
+    min-width: 200px;
+    padding: 20px;
+    position: relative;
+    text-decoration: none;
+    color: #323944;
+    text-align: center; }
+    .product-list .product-thumb > img {
+      transition: opacity .12s ease-out;
+      border-radius: 50%; }
+    .product-list .product-thumb:hover {
+      color: #d10e29; }
+      .product-list .product-thumb:hover > img {
+        opacity: .88; }
+
 /*
   Landing
 */
@@ -1698,26 +1750,32 @@ view.
   .start-block .inner {
     color: #fff;
     text-shadow: 1px 2px 5px rgba(50, 57, 68, 0.2);
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     max-width: 700px;
     text-align: center;
     line-height: 1.2em; }
     .start-block .inner .btn {
-      margin-top: 20px; }
+      margin-top: 10px; }
 
 .advantages {
   display: flex;
-  align-items: flex-start;
-  padding: 30px 0;
+  padding: 20px 0;
   text-align: center;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  flex-direction: column;
+  align-items: center; }
   .advantages .advant {
-    padding: 0 20px; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; }
     .advantages .advant-image {
       width: 64px;
       height: 64px;
       margin-bottom: 10px; }
+    .advantages .advant-text {
+      font-size: 15px; }
 
 .about {
   position: relative;
@@ -1750,24 +1808,31 @@ view.
 
 .product-cats {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 30px; }
   .product-cats-item {
+    width: 16.66%;
+    max-width: 300px;
+    min-width: 200px;
     padding: 20px;
     position: relative; }
-    .product-cats-item > a {
+    .product-cats-item-inner {
+      display: block;
       text-decoration: none;
       color: #323944;
       text-align: center; }
-      .product-cats-item > a > img {
+      .product-cats-item-inner > img {
         transition: opacity .12s ease-out;
         border-radius: 50%; }
-      .product-cats-item > a:hover {
+      .product-cats-item-inner:hover {
         color: #d10e29; }
-        .product-cats-item > a:hover > img {
+        .product-cats-item-inner:hover > img {
           opacity: .88; }
+    .product-cats-item-inner:visited {
+      color: #323944; }
+      .product-cats-item-inner:visited:hover {
+        color: #d10e29; }
 
 .prod-land-img {
   margin-bottom: 30px; }
@@ -1798,11 +1863,19 @@ view.
   .form-modal-inner {
     transition: transform .3s ease-out;
     transform: translateY(50px);
-    padding: 20px;
+    padding: 20px 40px;
     background-color: #fff;
     position: relative;
     border-radius: 10px;
     box-shadow: 1px 3px 10px rgba(50, 57, 68, 0.3); }
+  .form-modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    fill: #5c6b80; }
+    .form-modal .close-btn:hover {
+      fill: #f01d3a; }
   .form-modal.show {
     z-index: 1005;
     opacity: 1; }
@@ -1811,19 +1884,24 @@ view.
 
 .wpcf7-form {
   text-align: center; }
+  .wpcf7-form br {
+    display: none; }
   .wpcf7-form .form-row {
     text-align: left;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    flex-direction: column;
     margin: 0 -15px; }
   .wpcf7-form .form-group {
-    width: 45%;
+    width: 100%;
     max-width: 300px;
-    padding: 0 15px; }
+    padding: 0 15px;
+    margin: 0 auto; }
   .wpcf7-form .form-submit {
-    padding-top: 24px;
-    position: relative; }
+    padding: 0 15px 0;
+    position: relative;
+    margin: 0 auto; }
     .wpcf7-form .form-submit .btn {
       padding: 5px 30px; }
     .wpcf7-form .form-submit .ajax-loader {
@@ -1831,12 +1909,18 @@ view.
       right: 10px;
       top: 12px; }
   .wpcf7-form .form-desc {
-    font-size: 10px; }
-  .form-modal .wpcf7-form .form-row {
-    flex-direction: column; }
-  .form-modal .wpcf7-form .form-group, .form-modal .wpcf7-form .btn {
-    width: 100%;
-    justify-content: center; }
+    font-size: 10px;
+    margin-top: 10px; }
+  .form-modal .wpcf7-form {
+    max-width: 400px; }
+    .form-modal .wpcf7-form .form-row {
+      flex-direction: column;
+      align-items: center; }
+    .form-modal .wpcf7-form .form-submit {
+      padding-top: 0; }
+    .form-modal .wpcf7-form .form-group, .form-modal .wpcf7-form .btn {
+      width: 100%;
+      justify-content: center; }
   .wpcf7-form .wpcf7-not-valid {
     border-bottom: 2px solid #f01d3a;
     padding-top: 2px; }
@@ -1844,7 +1928,12 @@ view.
     color: #f01d3a;
     font-size: 14px; }
   .wpcf7-form div.wpcf7-response-output {
-    margin: 5px 0 15px; }
+    margin: 5px 0 15px;
+    border-color: #53B202;
+    color: #53B202; }
+    .wpcf7-form div.wpcf7-response-output.wpcf7-validation-errors {
+      border-color: #f01d3a;
+      color: #f01d3a; }
 
 /*********************
 LARGER MOBILE DEVICES
@@ -1860,18 +1949,31 @@ tweeners.
     .header-mainBtn .btn {
       font-size: 15px;
       padding: 5px 15px; }
+  .header .mob-menu-btn {
+    display: none; }
+  .header .mob-menu.show {
+    display: none; }
 
   .start-block {
     height: 600px; }
     .start-block .inner {
       font-size: 42px; }
+      .start-block .inner .btn {
+        margin-top: 20px; }
 
   .about {
     padding: 20px 100px; }
     .about:before, .about:after {
       background-size: contain; }
     .about:after {
-      display: block; } }
+      display: block; }
+
+  .advantages {
+    flex-direction: row; }
+    .advantages .advant-image {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 10px; } }
 /*********************
 TABLET & SMALLER LAPTOPS
 This is the average viewing window. So Desktops, Laptops, and
@@ -1900,7 +2002,32 @@ you can add resource intensive styles.
   .about {
     padding: 20px 150px; }
     .about:before, .about:after {
-      opacity: 1; } }
+      opacity: 1; }
+
+  .advantages {
+    align-items: flex-start;
+    padding: 30px 0; }
+    .advantages .advant {
+      padding: 0 20px; }
+      .advantages .advant-image {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 10px; }
+      .advantages .advant-text {
+        font-size: 16px; }
+
+  .wpcf7-form .form-row {
+    flex-direction: row; }
+  .wpcf7-form .form-group {
+    width: 45%; }
+  .wpcf7-form .form-submit {
+    padding: 24px 15px 0; }
+    .wpcf7-form .form-submit .btn {
+      padding: 5px 30px; }
+    .wpcf7-form .form-submit .ajax-loader {
+      position: absolute;
+      right: 10px;
+      top: 12px; } }
 /*********************
 DESKTOP
 This is the average viewing window. So Desktops, Laptops, and
@@ -1917,7 +2044,12 @@ you can add resource intensive styles.
   This is the desktop size. It's larger than an iPad so it will only
   be seen on the Desktop.
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .nav {
+    display: flex; }
+
+  .wpcf7-form .form-group {
+    width: 25%; } }
 /*********************
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.

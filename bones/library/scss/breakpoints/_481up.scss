@@ -10,6 +10,12 @@
 			padding: 5px 15px;
 		}
 	}
+	.mob-menu-btn {
+		display: none;
+	}
+	.mob-menu.show {
+		display: none;
+	}
 }
 
 
@@ -17,8 +23,12 @@
 	height: 600px;
 	.inner {
 		font-size: 42px;
+		.btn {
+			margin-top: 20px;
+		}
 	}
 }
+
 
 .about {
 	padding: 20px 100px;
@@ -28,5 +38,17 @@
 	}
 	&:after {
 		display: block;
+	}
+}
+
+
+.advantages {
+	flex-direction: row;
+	.advant {
+		&-image {
+			width: 32px;
+			height: 32px;
+			margin-bottom: 10px;
+		}
 	}
 }

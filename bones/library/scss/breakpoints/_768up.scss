@@ -41,3 +41,46 @@
 		opacity: 1;
 	}
 }
+
+.advantages {
+	align-items: flex-start;
+	padding: 30px 0;
+	.advant {
+		padding: 0 20px;
+		&-image {
+			width: 64px;
+			height: 64px;
+			margin-bottom: 10px;
+		}
+		&-text {
+			font-size: 16px;
+		}
+	}
+}
+
+
+
+
+.wpcf7{
+
+	&-form{
+		.form-row{
+			flex-direction: row;
+		}
+		.form-group{
+			width: 45%;
+		}
+		.form-submit{
+			padding: 24px 15px 0;
+			.btn{
+				padding: 5px 30px;
+			}
+			.ajax-loader {
+				position: absolute;
+				right: 10px;
+				top: 12px;
+			}
+		}
+
+	}
+}

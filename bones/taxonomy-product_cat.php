@@ -24,7 +24,7 @@
                 <?php while (have_posts()) : the_post(); ?>
 
                 <a class="product-thumb" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                     <img class="product-image" src="<?php echo get_the_post_thumbnail_url( null, 'medium' ); ?>"/>
+                     <img class="product-image" src="<?php echo get_the_post_thumbnail_url( null, 'thumbnail' ); ?>"/>
                      <h3>
                            <?php the_title(); ?>
                      </h3>

@@ -106,7 +106,9 @@ function loadGravatars() {
 
 
 
-var formModal = null;
+var formModal = null, mobMenu = null;
+
+var  mobMenuOpen = false;
 
 
 function openModal() {
@@ -115,16 +117,32 @@ if (!formModal) formModal = document.getElementById('formModal');
 }
 
 function closeModal(e) {
-	// e.preventDefault();
-    if (e.target.id === 'formModal' && formModal)  formModal.classList.remove("show");
+    if (formModal)  formModal.classList.remove("show");
 }
+
 
 /*
  * Put all your regular jQuery in here.
 */
 jQuery(document).ready(function($) {
 
+    function closeMobMenu(e) {
+        if (mobMenuOpen && mobMenu) mobMenu.removeClass("show");
+    }
+
+    function openMobMenu(e) {
+    	e.preventDefault();
+    	e.stopPropagation();
+        if (!mobMenu) mobMenu = $('.mob-menu');
+        console.log('mobMenu',mobMenu);
+        mobMenu.addClass("show");
+        mobMenuOpen = true;
+    }
+
 	$('#formModalBtn').on( "click", openModal);
-	$('#formModal').on( "click", closeModal);
+	$('#formModal .close-btn').on( "click", closeModal);
+
+	$('#mobMenuBtn').on( "click", openMobMenu);
+	$('body').on( "click", closeMobMenu);
 
 }); /* end of as page load scripts */

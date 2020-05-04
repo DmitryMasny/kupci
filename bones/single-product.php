@@ -24,14 +24,14 @@
             <h1 class="page-title"><?php the_title(); ?></h1>
 
             <div class="product-page-image m-all t-1of2 d-1of2 cf">
-                 <img src="<?php echo get_the_post_thumbnail_url( null, 'full' ); ?>"/>
+                 <img src="<?php echo get_the_post_thumbnail_url( null, 'large' ); ?>"/>
             </div>
 
             <div class="product-page-info m-all t-1of2 d-1of2 last-col cf">
                  <?php the_content(); ?>
             </div>
 
-            <div class="product-page-image m-all t-all d-all cf">
+            <div class="product-page-cats m-all t-all d-all cf">
                 <p class="byline vcard">
                   Категория:
                   <?php printf( get_the_term_list( $post->ID, 'product_cat', ' ', ', ', '' ) ); ?>

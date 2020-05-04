@@ -37,13 +37,41 @@ function product_types_handler( $atts ){
             foreach((array)$terms as $term){
                 if ($term->term_id == $categories_item->term_id){
                     $noEmpty = true;
-                    echo ('<div class="product-cats-item"><a href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") );
+                    echo ('<div class="product-cats-item"><a class="product-cats-item-inner" href="' . esc_url(get_term_link($term, $term->taxonomy)) . '" title="Нажмите, чтобы перейти в рубрику">' . wp_get_attachment_image($term->image_id, "thumbnail") );
                 }
             }
             if ($noEmpty) echo('<div class="text">' . $categories_item->cat_name . '</div></a></div>');
         }
     }
 
+    echo("</div>");
+
+    return ob_get_clean();
+
+}
+
+/*
+    Список всех продуктов
+*/
+function products_handler( ){
+    ob_start();
+    echo('<div class="product-cats">');
+
+ 	$query = new WP_Query( array('post_type' => 'product' ) );
+ 	while ( $query->have_posts() ) : $query->the_post(); ?>
+ 		<div class="product-cats-item">
+ 		<a class="product-cats-item-inner" href="<?php the_permalink() ?>" title="Нажмите, чтобы перейти в рубрику">
+        	 	<?php
+        		    if ( has_post_thumbnail() ) {
+        		      the_post_thumbnail();
+        		    }
+        		    ?>
+        		    <div class="text">
+        		    <?php the_title(); ?>
+        		    </div>
+        	</a></div>
+ 	<?php wp_reset_postdata();
+ 	endwhile;
     echo("</div>");
 
     return ob_get_clean();
@@ -102,5 +130,6 @@ function about_handler( $atts = [] ){
 add_shortcode( 'product_types', 'product_types_handler' );
 add_shortcode( 'advantages', 'advantages_handler' );
 add_shortcode( 'about', 'about_handler' );
+add_shortcode( 'products', 'products_handler' );
 
 ?>
