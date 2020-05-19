@@ -23,7 +23,7 @@ function product_types_handler( $atts ){
     );
     $catlist = get_categories($args); // получаем список рубрик
 
-    echo('<div class="product-cats">');
+    echo('<div id="productCategories"  class="product-cats">');
 
     foreach($catlist as $categories_item){
 
@@ -55,9 +55,11 @@ function product_types_handler( $atts ){
 */
 function products_handler( ){
     ob_start();
-    echo('<div class="product-cats">');
+    echo('<div id="allProducts" class="product-cats">');
 
- 	$query = new WP_Query( array('post_type' => 'product' ) );
+ 	$query = new WP_Query( array(
+ 	    'post_type' => 'product',
+        'posts_per_page' => 32 ) );
  	while ( $query->have_posts() ) : $query->the_post(); ?>
  		<div class="product-cats-item">
  		<a class="product-cats-item-inner" href="<?php the_permalink() ?>" title="Нажмите, чтобы перейти в рубрику">
@@ -113,7 +115,7 @@ function about_handler( $atts = [] ){
 
     $text = get_field('about');
 
-        echo '<div class="about">';
+        echo '<div id="aboutCompany" class="about">';
         echo '<h2>'. $atts2->title .'</h2>';
         echo '<p>'. $text .'</p>';
         echo '</div>';

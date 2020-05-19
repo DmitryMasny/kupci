@@ -241,6 +241,15 @@ body#tinymce.wp-editor {
   https://github.com/devinhunt/typebase.css
   I've edited it a bit, but it's a nice starting point.
   */
+  /*********************
+  GENERAL STYLES
+  *********************/
+  /*********************
+  LINK STYLES
+  *********************/
+  /******************************************************************
+  H1, H2, H3, H4, H5 STYLES
+  ******************************************************************/
   /*
   some nice typographical defaults
   more here: http://www.newnet-soft.com/blog/csstypography
@@ -575,6 +584,57 @@ body#tinymce.wp-editor {
     src: local("Gotham Pro"), local("GothamPro"), url("../fonts/GothamPro.eot?#iefix") format("embedded-opentype"), url("../fonts/GothamPro.woff") format("woff"), url("../fonts/GothamPro.ttf") format("truetype");
     font-weight: normal;
     font-style: normal; } }
+  body#tinymce.wp-editor html {
+    scroll-behavior: smooth; }
+  body#tinymce.wp-editor body {
+    font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #5c6b80;
+    background-color: #eaedf2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
+    color: #f01d3a;
+    /* on hover */
+    /* on click */
+    /* mobile tap color */ }
+    body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
+      color: #d10e29; }
+    body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
+      /*
+      this highlights links on iPhones/iPads.
+      so it basically works like the :hover selector
+      for mobile devices.
+      */
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+  body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
+    text-rendering: optimizelegibility;
+    font-weight: 500;
+    /*
+    if you're going to use webfonts, be sure to check your weights
+    http://css-tricks.com/watch-your-font-weight/
+    */
+    /* removing text decoration from all headline links */ }
+    body#tinymce.wp-editor h1 a, body#tinymce.wp-editor .h1 a, body#tinymce.wp-editor h2 a, body#tinymce.wp-editor .h2 a, body#tinymce.wp-editor h3 a, body#tinymce.wp-editor .h3 a, body#tinymce.wp-editor h4 a, body#tinymce.wp-editor .h4 a, body#tinymce.wp-editor h5 a, body#tinymce.wp-editor .h5 a {
+      text-decoration: none; }
+  body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1 {
+    font-size: 2.5em;
+    line-height: 1.333em; }
+  body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2 {
+    font-size: 1.75em;
+    line-height: 1.4em;
+    margin-bottom: 0.375em; }
+  body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3 {
+    font-size: 1.125em; }
+  body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4 {
+    font-size: 1.1em;
+    font-weight: 700; }
+  body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
+    font-size: 0.846em;
+    line-height: 2.09em;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
   body#tinymce.wp-editor p {
     -ms-word-wrap: break-word;
     word-break: break-word;
@@ -591,7 +651,6 @@ body#tinymce.wp-editor {
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #f01d3a;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {

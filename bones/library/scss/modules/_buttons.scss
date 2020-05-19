@@ -44,13 +44,20 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
     color: $white;
     text-decoration: none;
     outline: none;
+
   } // end hover
 
   // clicking on the button
   &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
+    top: 1px;
+  }
 
+  &:visited {
+    color: $white;
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
   &.large {
     line-height: 40px;
     font-weight: 500;
@@ -91,5 +98,4 @@ and it will create a button dependant on those variables.
   &:active {
     background-color: darken($green2, 5%);
   }
-
 }

@@ -18,6 +18,7 @@
       <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
             <section class="entry-content product-cat-page wrap cf" itemprop="articleBody">
+                <h1 class="page-title"><?php single_term_title(); ?></h1>
 
                 <?php if (have_posts()) : ?>
                 <div class="product-list">

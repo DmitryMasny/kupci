@@ -22,7 +22,7 @@
         <div class="inner">
         <?php the_field('header');?>
             <div >
-                <div class="btn green-btn large"><?php the_field('main_btn_text');?></div>
+                <a href="#aboutCompany" class="btn green-btn large"><?php the_field('main_btn_text');?></a>
             </div>
         </div>
     </div>
