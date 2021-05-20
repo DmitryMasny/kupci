@@ -16,7 +16,7 @@ function product_types_handler( $atts ){
         'hide_empty' => 0,
         'exclude' => '', // ID рубрики, которую нужно исключить
         'number' => '0',
-        'orderby' => 'count',
+        'orderby' => 'description',
         'order' => 'DESC',
         'taxonomy' => $rg->cat, // таксономия, для которой нужны изображения
         'pad_counts' => true
